@@ -1,0 +1,110 @@
+---
+import site from '../content/site.json';
+
+const navItems = [
+  {
+    label: 'Program',
+    href: '#',
+    children: [
+      { label: 'Nile Arabic Course', href: '/program/arabic-course' },
+      { label: 'Pendaftaran Al-Azhar', href: '/program/pendaftaran-al-azhar' },
+      { label: 'Nile Global Discovery', href: '/program/global-discovery' },
+    ]
+  },
+  {
+    label: 'Tentang Nile Edu',
+    href: '#',
+    children: [
+      { label: 'Selayang Pandang', href: '/tentang/selayang-pandang' },
+      { label: 'Testimoni', href: '/tentang/testimoni' },
+      { label: 'Our Team', href: '/tentang/team' },
+    ]
+  },
+  { label: 'Mitra', href: '/mitra' },
+  {
+    label: 'Layanan Gratis',
+    href: '#',
+    children: [
+      { label: 'Tes Kemampuan B. Arab', href: '/layanan/tes-bahasa-arab' },
+      { label: 'Ebook Panduan Beasiswa', href: '/layanan/ebook-beasiswa' },
+      { label: 'Ebook List Beasiswa', href: '/layanan/list-beasiswa' },
+      { label: 'Konsultasi', href: '/layanan/konsultasi' },
+    ]
+  },
+];
+---
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/images/logo.png" alt={site.companyName} /></a>
+    <ul class="nav-links" id="navLinks">
+      {navItems.map(item => (
+        <li>
+          <a href={item.href}>
+            {item.label}
+            {item.children && <span class="chevron" />}
+          </a>
+          {item.children && (
+            <div class="dropdown">
+              {item.children.map(child => <a href={child.href}>{child.label}</a>)}
+            </div>
+          )}
+        </li>
+      ))}
+      <li><a href={`https://wa.me/${site.contacts[0].whatsapp}`} class="nav-cta">Hubungi Kami</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span /><span /><span /></button>
+  </div>
+</nav>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 50);
+  });
+  document.getElementById('hamburger')?.addEventListener('click', () => {
+    document.getElementById('navLinks')?.classList.toggle('active');
+    document.getElementById('hamburger')?.classList.toggle('active');
+  });
+  document.querySelectorAll('.nav-links > li > a').forEach(link => {
+    if (link.querySelector('.chevron')) {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (window.innerWidth <= 768) {
+          link.parentElement?.classList.toggle('open');
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); transition: var(--transition); }
+  .navbar.scrolled { box-shadow: var(--shadow); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .nav-logo img { height: 52px; }
+  .nav-links { display: flex; gap: 4px; align-items: center; list-style: none; margin: 0; padding: 0; }
+  .nav-links > li { position: relative; }
+  .nav-links > li > a { padding: 10px 16px; border-radius: 10px; font-weight: 500; font-size: 0.9rem; color: var(--navy); display: flex; align-items: center; gap: 6px; transition: var(--transition); }
+  .nav-links > li > a:hover { background: var(--cream); color: var(--gold); }
+  .chevron { width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: var(--transition); display: inline-block; margin-top: -3px; }
+  .nav-links > li:hover > a .chevron { transform: rotate(-135deg); }
+  .dropdown { position: absolute; top: calc(100% + 4px); left: 0; min-width: 280px; background: var(--white); border-radius: 14px; box-shadow: var(--shadow-lg); padding: 8px; opacity: 0; visibility: hidden; transform: translateY(8px); transition: var(--transition); }
+  .nav-links > li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown a { display: block; padding: 10px 16px; border-radius: 10px; font-size: 0.85rem; font-weight: 500; color: var(--gray-700); transition: var(--transition); }
+  .dropdown a:hover { background: var(--cream); color: var(--gold); }
+  .nav-cta { background: var(--gold) !important; color: var(--white) !important; border-radius: 12px !important; font-weight: 600 !important; padding: 10px 24px !important; }
+  .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+  .hamburger span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: var(--transition); display: block; }
+  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+  @media (max-width: 768px) {
+    .nav-links { position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: var(--white); flex-direction: column; padding: 24px; transform: translateX(100%); transition: var(--transition); overflow-y: auto; gap: 4px; }
+    .nav-links.active { transform: translateX(0); }
+    .nav-links > li > a { padding: 14px 18px; font-size: 1rem; }
+    .dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; padding: 0 0 0 18px; display: none; }
+    .nav-links > li.open .dropdown { display: block; }
+    .hamburger { display: flex; }
+  }
+</style>

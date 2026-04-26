@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
+import site from '../../content/site.json';
+---
+
+<Layout title={`Nile Global Discovery - ${site.companyName}`}>
+  <Navbar />
+  <PageHeader title="Nile Global Discovery" subtitle="Program" description={site.discovery.description} image="/images/cairo-skyline.png" />
+
+  <!-- Intro -->
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-grid fade-in">
+        <div class="intro-img"><img src="/images/cairo-skyline.png" alt="Cairo Discovery" loading="lazy" /></div>
+        <div class="intro-text">
+          <h2>Belajar Tidak Hanya di Ruang Kelas</h2>
+          <p>Nile Global Discovery adalah program perjalanan edukasi eksklusif yang memadukan pendalaman Al-Qur'an bersanad, kursus intensif bahasa Arab, dan napak tilas sejarah peradaban Islam.</p>
+          <p>Sebagai bagian dari {site.companyName}, kami memiliki jaringan dan pengalaman yang kuat dalam mengelola program pendidikan internasional di wilayah Timur Tengah.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section class="pillars">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Pilar Utama</span>
+        <h2>3 Pilar Program Kami</h2>
+      </div>
+      <div class="pillars-grid">
+        {site.discovery.pillars.map(p => (
+          <div class="pillar-card fade-in">
+            <div class="pillar-icon"><Icon name={p.icon} size={32} /></div>
+            <h3>{p.title}</h3>
+            <p>{p.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg"><img src="/images/cairo-skyline.png" alt="" loading="lazy" /><div class="cta-overlay"></div></div>
+    <div class="container">
+      <h2 class="fade-in">Jelajahi Dunia, Perkaya Jiwa</h2>
+      <p class="fade-in">Temukan makna sejarah bersama Nile Global Discovery.</p>
+      <a href={`https://wa.me/${site.contacts[0].whatsapp}?text=Halo, saya tertarik dengan program Nile Global Discovery`} class="btn btn-primary fade-in">Tanya Lebih Lanjut →</a>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<style>
+  .intro-section { padding: 80px 0; }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center; }
+  .intro-img { border-radius: 20px; overflow: hidden; }
+  .intro-img img { width: 100%; height: 320px; object-fit: cover; }
+  .intro-text h2 { font-size: 1.6rem; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+  .intro-text p { font-size: 0.92rem; color: var(--gray-500); line-height: 1.8; margin-bottom: 12px; }
+
+  .pillars { padding: 80px 0; background: var(--gray-100); }
+  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .pillar-card { background: var(--white); padding: 40px 28px; border-radius: var(--radius); border: 1px solid var(--gray-200); text-align: center; transition: var(--transition); }
+  .pillar-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+  .pillar-icon { width: 72px; height: 72px; border-radius: 18px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(0,107,182,0.12), rgba(0,107,182,0.04)); display: flex; align-items: center; justify-content: center; color: var(--gold); }
+  .pillar-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .pillar-card p { font-size: 0.9rem; color: var(--gray-500); line-height: 1.8; }
+
+  .cta-section { position: relative; padding: 100px 0; text-align: center; overflow: hidden; }
+  .cta-bg { position: absolute; inset: 0; }
+  .cta-bg img { width: 100%; height: 100%; object-fit: cover; }
+  .cta-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,40,70,0.94), rgba(0,61,107,0.88)); }
+  .cta-section .container { position: relative; z-index: 1; }
+  .cta-section h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--white); margin-bottom: 12px; }
+  .cta-section p { color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+
+  @media (max-width: 768px) {
+    .intro-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr; }
+  }
+</style>

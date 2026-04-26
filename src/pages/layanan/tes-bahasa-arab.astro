@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
+import site from '../../content/site.json';
+---
+
+<Layout title={`Tes Kemampuan Bahasa Arab - ${site.companyName}`}>
+  <Navbar />
+  <PageHeader title="Tes Kemampuan Bahasa Arab" subtitle="Layanan Gratis" description="Placement test gratis untuk mengukur level kemampuan bahasa Arabmu secara akurat sebelum memulai program kursus." image="/images/pattern.png" />
+
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content fade-in">
+          <h2>Kenali Level Bahasa Arabmu</h2>
+          <p>Sebelum memulai perjalanan belajar bahasa Arab, penting untuk mengetahui posisi kemampuanmu saat ini. Tes kemampuan bahasa Arab dari Nile Edu dirancang untuk mengevaluasi empat keterampilan utama:</p>
+          <ul>
+            <li><strong>Istima' (Mendengar)</strong> — Kemampuan memahami percakapan dan teks lisan</li>
+            <li><strong>Kalam (Berbicara)</strong> — Kelancaran dalam berkomunikasi</li>
+            <li><strong>Qira'ah (Membaca)</strong> — Pemahaman teks tertulis dan kitab</li>
+            <li><strong>Kitabah (Menulis)</strong> — Kemampuan menyusun teks dalam bahasa Arab</li>
+          </ul>
+          <p>Hasil tes akan menentukan paket kursus yang paling sesuai dengan kebutuhanmu, sehingga waktu belajar lebih efisien dan efektif.</p>
+
+          <h3>Cara Mengikuti Tes</h3>
+          <ol>
+            <li>Hubungi tim Nile Edu via WhatsApp</li>
+            <li>Jadwalkan waktu tes yang nyaman</li>
+            <li>Ikuti tes secara online</li>
+            <li>Dapatkan rekomendasi paket kursus</li>
+          </ol>
+        </div>
+        <div class="sidebar fade-in">
+          <div class="sidebar-card">
+            <Icon name="pencil" size={28} />
+            <h4>Gratis & Tanpa Komitmen</h4>
+            <p>Tes ini sepenuhnya gratis. Kamu tidak diwajibkan mendaftar program apapun setelahnya.</p>
+          </div>
+          <div class="sidebar-cta">
+            <h4>Siap Mengukur Kemampuanmu?</h4>
+            <a href={`https://wa.me/${site.contacts[0].whatsapp}?text=Halo, saya ingin mengikuti tes kemampuan bahasa Arab gratis`} class="btn btn-primary">Ambil Tes Gratis →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<style>
+  .content-section { padding: 80px 0; }
+  .content-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: start; }
+  .main-content h2 { font-size: 1.6rem; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+  .main-content h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin: 28px 0 14px; }
+  .main-content p { font-size: 0.92rem; color: var(--gray-700); line-height: 1.9; margin-bottom: 14px; }
+  .main-content ul, .main-content ol { padding-left: 20px; margin-bottom: 14px; }
+  .main-content li { font-size: 0.9rem; color: var(--gray-700); line-height: 1.8; margin-bottom: 8px; }
+  .sidebar { position: sticky; top: 100px; }
+  .sidebar-card { padding: 28px; border-radius: var(--radius); background: var(--cream); margin-bottom: 20px; }
+  .sidebar-card svg { color: var(--gold); margin-bottom: 12px; }
+  .sidebar-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .sidebar-card p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.7; }
+  .sidebar-cta { padding: 28px; border-radius: var(--radius); background: var(--navy); text-align: center; }
+  .sidebar-cta h4 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 16px; }
+  @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .sidebar { position: static; } }
+</style>

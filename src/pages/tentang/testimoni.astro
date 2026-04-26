@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Footer from '../../components/Footer.astro';
+import site from '../../content/site.json';
+---
+
+<Layout title={`Testimoni - ${site.companyName}`}>
+  <Navbar />
+  <PageHeader title="Testimoni Alumni" subtitle="Tentang Kami" description="Cerita nyata dari para alumni yang telah merasakan pendampingan Nile Edu dalam meraih mimpi kuliah di Al-Azhar Kairo." image="/images/students.png" />
+
+  <section class="testi-section">
+    <div class="container">
+      <div class="testi-grid">
+        <div class="testi-card fade-in">
+          <div class="testi-quote">"Nile Edu benar-benar membantu saya dari awal sampai akhir. Prosesnya transparan dan timnya sangat responsif. Alhamdulillah sekarang saya sudah resmi menjadi mahasiswa Al-Azhar."</div>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div><strong>Ahmad Fadhil</strong><span>Alumni Angkatan 2024</span></div>
+          </div>
+        </div>
+        <div class="testi-card fade-in">
+          <div class="testi-quote">"Program karantina sangat membantu saya lulus Tahdid Mustawa di level yang lebih tinggi dari ekspektasi. Kursusnya terstruktur dan gurunya berpengalaman."</div>
+          <div class="testi-author">
+            <div class="testi-avatar">M</div>
+            <div><strong>Muhammad Rizky</strong><span>Alumni Angkatan 2024</span></div>
+          </div>
+        </div>
+        <div class="testi-card fade-in">
+          <div class="testi-quote">"Yang paling saya suka adalah pendampingan saat di Mesir. Saya tidak merasa sendirian karena tim Nile Edu terus memantau dan membantu adaptasi."</div>
+          <div class="testi-author">
+            <div class="testi-avatar">I</div>
+            <div><strong>Ibrahim Hakim</strong><span>Alumni Angkatan 2025</span></div>
+          </div>
+        </div>
+        <div class="testi-card fade-in">
+          <div class="testi-quote">"Rumah Hiwar benar-benar mengubah pengalaman saya di Mesir. Pembinaan yang diberikan sangat komprehensif — dari ilmu agama, bahasa, hingga life skills."</div>
+          <div class="testi-author">
+            <div class="testi-avatar">H</div>
+            <div><strong>Hasan Abdullah</strong><span>Alumni Angkatan 2023</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-note fade-in">
+        <p>Ingin menjadi bagian dari cerita sukses berikutnya? Hubungi kami sekarang.</p>
+        <a href={`https://wa.me/${site.contacts[0].whatsapp}`} class="btn btn-primary">Konsultasi Gratis →</a>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<style>
+  .testi-section { padding: 80px 0; }
+  .testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .testi-card { background: var(--white); padding: 32px; border-radius: var(--radius); border: 1px solid var(--gray-200); transition: var(--transition); }
+  .testi-card:hover { border-color: var(--gold); box-shadow: var(--shadow); }
+  .testi-quote { font-size: 0.95rem; color: var(--gray-700); line-height: 1.8; font-style: italic; margin-bottom: 20px; position: relative; padding-left: 20px; border-left: 3px solid var(--gold); }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; }
+  .testi-author strong { display: block; font-size: 0.9rem; color: var(--navy); }
+  .testi-author span { font-size: 0.78rem; color: var(--gray-500); }
+  .testi-note { text-align: center; margin-top: 48px; padding: 40px; border-radius: var(--radius); background: var(--cream); }
+  .testi-note p { font-size: 1rem; color: var(--navy); margin-bottom: 20px; font-weight: 600; }
+  @media (max-width: 768px) { .testi-grid { grid-template-columns: 1fr; } }
+</style>

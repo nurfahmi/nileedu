@@ -1,0 +1,51 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  image?: string;
+}
+const { title, subtitle, description, image } = Astro.props;
+---
+
+<section class="page-header">
+  {image && <div class="ph-bg"><img src={image} alt="" /><div class="ph-overlay"></div></div>}
+  <div class="ph-deco"><div class="circle c1"></div><div class="circle c2"></div><div class="circle c3"></div></div>
+  <div class="container">
+    <div class="page-header-content">
+      {subtitle && <span class="page-label">{subtitle}</span>}
+      <h1>{title}</h1>
+      {description && <p>{description}</p>}
+      <div class="ph-breadcrumb">
+        <a href="/">Beranda</a>
+        <span class="sep">/</span>
+        {subtitle && <><a href="#">{subtitle}</a><span class="sep">/</span></>}
+        <span class="current">{title}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .page-header {
+    padding: 140px 0 60px; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, var(--navy) 0%, #001f3f 50%, var(--navy-light) 100%);
+  }
+  .ph-bg { position: absolute; inset: 0; }
+  .ph-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.15; }
+  .ph-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,40,70,0.9), rgba(0,61,107,0.8)); }
+  .ph-deco { position: absolute; inset: 0; pointer-events: none; }
+  .circle { position: absolute; border-radius: 50%; border: 1px solid rgba(38,143,217,0.08); }
+  .c1 { width: 500px; height: 500px; right: -150px; top: -200px; animation: spinSlow 40s linear infinite; }
+  .c2 { width: 300px; height: 300px; right: -50px; top: -100px; border-color: rgba(38,143,217,0.12); animation: spinSlow 30s linear infinite reverse; }
+  .c3 { width: 200px; height: 200px; left: -60px; bottom: -60px; border-color: rgba(38,143,217,0.06); }
+  .page-header-content { position: relative; z-index: 1; max-width: 640px; animation: fadeUp 0.6s ease; }
+  .page-label { display: inline-block; font-size: 0.78rem; font-weight: 700; color: var(--gold-light); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; padding: 6px 16px; background: rgba(38,143,217,0.12); border: 1px solid rgba(38,143,217,0.2); border-radius: 50px; }
+  .page-header h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+  .page-header p { font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.8; max-width: 540px; margin-bottom: 20px; }
+  .ph-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; }
+  .ph-breadcrumb a { color: rgba(255,255,255,0.4); transition: var(--transition); }
+  .ph-breadcrumb a:hover { color: var(--gold-light); }
+  .ph-breadcrumb .sep { color: rgba(255,255,255,0.2); }
+  .ph-breadcrumb .current { color: rgba(255,255,255,0.7); font-weight: 600; }
+</style>

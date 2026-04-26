@@ -1,0 +1,204 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
+import site from '../../content/site.json';
+---
+
+<Layout title={`Nile Arabic Course - ${site.companyName}`}>
+  <Navbar />
+  <PageHeader title="Nile Arabic Course" subtitle="Program" description="Program kursus bahasa Arab komprehensif — dari persiapan kuliah di Mesir hingga percakapan langsung dengan penutur asli Arab." image="/images/pattern.png" />
+
+  <!-- Intro split -->
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-grid fade-in">
+        <div class="intro-text">
+          <span class="section-label">Tentang Program</span>
+          <h2>Kuasai Bahasa Arab dengan Kurikulum Al-Azhar</h2>
+          <p>Nile Arabic Course dirancang khusus untuk pelajar Indonesia yang ingin menguasai bahasa Arab secara serius — baik untuk persiapan tes Tahdid Mustawa maupun untuk kebutuhan akademik dan dakwah.</p>
+          <p>Pengajar berpengalaman langsung dari Mesir, metode terstruktur 6 level, dan tersedia <strong>placement test gratis</strong> untuk menentukan level yang tepat untukmu.</p>
+          <div class="intro-highlights">
+            <div class="ih"><Icon name="academic" size={18} /> Pengajar Alumni Al-Azhar</div>
+            <div class="ih"><Icon name="book" size={18} /> Kurikulum Standar Al-Azhar</div>
+            <div class="ih"><Icon name="chat" size={18} /> Online & Offline</div>
+            <div class="ih"><Icon name="clipboard" size={18} /> Placement Test Gratis</div>
+          </div>
+        </div>
+        <div class="intro-img">
+          <img src="/images/pattern.png" alt="Islamic calligraphy" loading="lazy" />
+          <div class="intro-float">
+            <span class="big">6</span>
+            <span class="sub">Level<br/>Bahasa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section class="packages">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Pilihan Paket</span>
+        <h2>5 Paket Kursus untuk Setiap Kebutuhan</h2>
+        <p>Dari persiapan tes masuk hingga baca kitab klasik — pilih sesuai tujuanmu.</p>
+      </div>
+      <div class="packages-grid">
+        {site.arabicCourse.packages.map((pkg, i) => (
+          <div class={`pkg-card fade-in ${i === 0 ? 'featured' : ''}`}>
+            <div class="pkg-header">
+              <div class="pkg-num">{i + 1}</div>
+              {i === 0 && <span class="pkg-badge">Populer</span>}
+            </div>
+            <h3>{pkg.title}</h3>
+            <p>{pkg.description}</p>
+            <a href={`https://wa.me/${site.contacts[0].whatsapp}?text=Halo, saya tertarik dengan paket ${pkg.title}`} class="pkg-cta">Tanya Paket Ini →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="method-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Metode Belajar</span>
+        <h2>Bagaimana Prosesnya?</h2>
+      </div>
+      <div class="method-grid">
+        <div class="method-card fade-in">
+          <div class="method-num">1</div>
+          <h3>Placement Test</h3>
+          <p>Ikuti tes gratis untuk menentukan level kemampuan bahasa Arabmu saat ini.</p>
+        </div>
+        <div class="method-card fade-in">
+          <div class="method-num">2</div>
+          <h3>Pilih Paket</h3>
+          <p>Pilih paket kursus sesuai dengan kebutuhan dan tujuan belajarmu.</p>
+        </div>
+        <div class="method-card fade-in">
+          <div class="method-num">3</div>
+          <h3>Mulai Belajar</h3>
+          <p>Ikuti sesi belajar bersama pengajar berpengalaman secara online atau offline.</p>
+        </div>
+        <div class="method-card fade-in">
+          <div class="method-num">4</div>
+          <h3>Evaluasi & Naik Level</h3>
+          <p>Evaluasi berkala memastikan progresmu terukur. Naik level setelah lulus ujian akhir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free Courses -->
+  <section class="free-section">
+    <div class="container">
+      <div class="free-layout fade-in">
+        <div class="free-left">
+          <span class="section-label accent">Bonus Eksklusif</span>
+          <h2 class="white">Free Course untuk Semua Peserta</h2>
+          <p>Setiap peserta Nile Arabic Course mendapatkan akses gratis ke program tambahan berikut — tanpa biaya apapun.</p>
+        </div>
+        <div class="free-right">
+          {site.arabicCourse.freeCourses.map(c => (
+            <div class="free-card">
+              <div class="free-icon"><Icon name="gift" size={18} /></div>
+              <span>{c}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg"><img src="/images/students.png" alt="" loading="lazy" /><div class="cta-overlay"></div></div>
+    <div class="container">
+      <h2 class="fade-in">Siap Mulai Belajar Bahasa Arab?</h2>
+      <p class="fade-in">Konsultasi gratis dan dapatkan placement test untuk menentukan level yang tepat untukmu.</p>
+      <div class="cta-buttons fade-in">
+        <a href={`https://wa.me/${site.contacts[0].whatsapp}?text=Halo, saya tertarik dengan Nile Arabic Course`} class="btn btn-primary">Daftar Sekarang →</a>
+        <a href="/layanan/tes-bahasa-arab" class="btn btn-outline">Ikuti Placement Test</a>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<style>
+  .white { color: var(--white) !important; }
+  .accent { color: var(--gold-light) !important; }
+
+  /* Intro */
+  .intro-section { padding: 80px 0; }
+  .intro-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+  .intro-text h2 { font-size: 1.6rem; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+  .intro-text p { font-size: 0.92rem; color: var(--gray-500); line-height: 1.8; margin-bottom: 12px; }
+  .intro-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+  .ih { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 600; color: var(--navy); padding: 10px 14px; border-radius: 10px; background: var(--gray-100); }
+  .ih :global(svg) { color: var(--gold); flex-shrink: 0; }
+  .intro-img { position: relative; border-radius: 20px; overflow: hidden; }
+  .intro-img img { width: 100%; height: 360px; object-fit: cover; }
+  .intro-float { position: absolute; bottom: -12px; right: -12px; width: 100px; height: 100px; background: var(--gold); border-radius: 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); box-shadow: 0 12px 40px rgba(0,107,182,0.3); }
+  .intro-float .big { font-size: 2.2rem; font-weight: 800; line-height: 1; }
+  .intro-float .sub { font-size: 0.65rem; font-weight: 600; text-align: center; line-height: 1.3; }
+
+  /* Packages */
+  .packages { padding: 80px 0; background: var(--gray-100); }
+  .packages-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .pkg-card { background: var(--white); padding: 28px; border-radius: var(--radius); border: 1px solid var(--gray-200); transition: var(--transition); display: flex; flex-direction: column; }
+  .pkg-card:hover { border-color: var(--gold); box-shadow: var(--shadow); transform: translateY(-3px); }
+  .pkg-card.featured { border-color: var(--gold); box-shadow: var(--shadow); position: relative; }
+  .pkg-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .pkg-num { width: 42px; height: 42px; border-radius: 12px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .pkg-badge { font-size: 0.7rem; font-weight: 700; color: var(--gold); background: rgba(0,107,182,0.08); padding: 4px 12px; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px; }
+  .pkg-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .pkg-card > p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.7; flex: 1; margin-bottom: 18px; }
+  .pkg-cta { font-size: 0.82rem; font-weight: 700; color: var(--gold); transition: var(--transition); }
+  .pkg-cta:hover { color: var(--navy); }
+
+  /* Method */
+  .method-section { padding: 80px 0; }
+  .method-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .method-card { text-align: center; padding: 32px 20px; border-radius: var(--radius); border: 1px solid var(--gray-200); transition: var(--transition); }
+  .method-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: var(--shadow); }
+  .method-num { width: 48px; height: 48px; border-radius: 50%; background: var(--cream); color: var(--gold); font-weight: 800; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+  .method-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .method-card p { font-size: 0.82rem; color: var(--gray-500); line-height: 1.7; }
+
+  /* Free Courses */
+  .free-section { padding: 80px 0; background: var(--navy); }
+  .free-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center; }
+  .free-left h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 14px; }
+  .free-left p { font-size: 0.92rem; color: rgba(255,255,255,0.5); line-height: 1.8; }
+  .free-right { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .free-card { display: flex; align-items: center; gap: 10px; padding: 14px 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.8); transition: var(--transition); }
+  .free-card:hover { background: rgba(255,255,255,0.08); }
+  .free-icon { width: 36px; height: 36px; border-radius: 10px; background: rgba(38,143,217,0.2); display: flex; align-items: center; justify-content: center; color: var(--gold-light); flex-shrink: 0; }
+
+  /* CTA */
+  .cta-section { position: relative; padding: 100px 0; text-align: center; overflow: hidden; }
+  .cta-bg { position: absolute; inset: 0; }
+  .cta-bg img { width: 100%; height: 100%; object-fit: cover; }
+  .cta-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,40,70,0.94), rgba(0,61,107,0.88)); }
+  .cta-section .container { position: relative; z-index: 1; }
+  .cta-section h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--white); margin-bottom: 12px; }
+  .cta-section p { color: rgba(255,255,255,0.6); margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.3); padding: 14px 32px; border-radius: 14px; font-weight: 700; font-size: 0.95rem; transition: var(--transition); cursor: pointer; }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  @media (max-width: 1024px) {
+    .method-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .intro-grid, .free-layout { grid-template-columns: 1fr; }
+    .packages-grid, .method-grid, .free-right { grid-template-columns: 1fr; }
+    .intro-highlights { grid-template-columns: 1fr; }
+  }
+</style>

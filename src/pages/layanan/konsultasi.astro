@@ -1,0 +1,77 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
+import site from '../../content/site.json';
+---
+
+<Layout title={`Konsultasi Gratis - ${site.companyName}`}>
+  <Navbar />
+  <PageHeader title="Konsultasi Gratis" subtitle="Layanan Gratis" description="Sesi konsultasi personal via WhatsApp — tanpa biaya, tanpa komitmen." image="/images/students.png" />
+
+  <section class="consult-section">
+    <div class="container">
+      <div class="consult-grid">
+        <div class="consult-content fade-in">
+          <h2>Ceritakan Rencana Studimu</h2>
+          <p>Apapun pertanyaanmu seputar studi ke Timur Tengah — kami siap membantu. Tim konsultan Nile Edu yang merupakan alumni Al-Azhar siap memberikan arahan yang tepat untuk perjalanan akademikmu.</p>
+          <div class="topics">
+            <h3>Topik yang Bisa Dikonsultasikan:</h3>
+            <div class="topic-grid">
+              <div class="topic"><Icon name="academic" size={18} /> Pendaftaran ke Al-Azhar Kairo</div>
+              <div class="topic"><Icon name="book" size={18} /> Pilihan paket kursus bahasa Arab</div>
+              <div class="topic"><Icon name="document" size={18} /> Persyaratan berkas dan dokumen</div>
+              <div class="topic"><Icon name="globe" size={18} /> Kehidupan mahasiswa di Mesir</div>
+              <div class="topic"><Icon name="home" size={18} /> Akomodasi dan tempat tinggal</div>
+              <div class="topic"><Icon name="shield" size={18} /> Beasiswa dan pendanaan</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-cards fade-in">
+          {site.contacts.map(c => (
+            <a href={`https://wa.me/${c.whatsapp}?text=Halo, saya ingin konsultasi seputar studi ke Timur Tengah`} class="contact-card">
+              <div class="contact-avatar">{c.name.charAt(0)}</div>
+              <div>
+                <h4>{c.name}</h4>
+                <span>{c.role}</span>
+                <span class="wa-num">+{c.whatsapp}</span>
+              </div>
+              <div class="contact-arrow">→</div>
+            </a>
+          ))}
+          <div class="email-card">
+            <h4>Prefer Email?</h4>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<style>
+  .consult-section { padding: 80px 0; }
+  .consult-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: start; }
+  .consult-content h2 { font-size: 1.6rem; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+  .consult-content > p { font-size: 0.95rem; color: var(--gray-700); line-height: 1.9; margin-bottom: 28px; }
+  .topics h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+  .topic-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .topic { display: flex; align-items: center; gap: 10px; padding: 14px 18px; border-radius: 12px; background: var(--gray-100); font-size: 0.88rem; color: var(--navy); font-weight: 500; }
+  .topic svg { color: var(--gold); flex-shrink: 0; }
+
+  .contact-cards { position: sticky; top: 100px; }
+  .contact-card { display: flex; align-items: center; gap: 16px; padding: 24px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--gray-200); margin-bottom: 16px; transition: var(--transition); text-decoration: none; }
+  .contact-card:hover { border-color: var(--gold); box-shadow: var(--shadow); transform: translateY(-2px); }
+  .contact-avatar { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.4rem; flex-shrink: 0; }
+  .contact-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); }
+  .contact-card span { display: block; font-size: 0.82rem; color: var(--gray-500); }
+  .wa-num { font-weight: 600; color: var(--gold) !important; margin-top: 4px; }
+  .contact-arrow { margin-left: auto; font-size: 1.2rem; color: var(--gold); font-weight: 700; }
+  .email-card { padding: 24px; border-radius: var(--radius); background: var(--cream); text-align: center; }
+  .email-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .email-card a { font-size: 0.9rem; color: var(--gold); font-weight: 600; }
+  @media (max-width: 768px) { .consult-grid { grid-template-columns: 1fr; } .topic-grid { grid-template-columns: 1fr; } .contact-cards { position: static; } }
+</style>

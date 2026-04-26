@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+import site from '../content/site.json';
+---
+
+<Layout title={`Mitra - ${site.companyName}`}>
+  <Navbar />
+  <PageHeader title="Mitra Kami" subtitle="Kolaborasi" description="Bekerja sama dengan lembaga pendidikan terpercaya untuk memastikan layanan terbaik bagi calon mahasiswa Al-Azhar." image="/images/partnership.png" />
+
+  <!-- Partners -->
+  <section class="partners-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Mitra Strategis</span>
+        <h2>Lembaga yang Bekerja Sama dengan Kami</h2>
+        <p>Nile Edu menjalin kemitraan strategis dengan lembaga pendidikan di Timur Tengah untuk memberikan layanan terbaik.</p>
+      </div>
+
+      <div class="partner-card fade-in">
+        <div class="pc-thumb"><img src="/images/al-azhar.png" alt="Al-Azhar" loading="lazy" /></div>
+        <div class="pc-body">
+          <div class="pc-badge"><Icon name="academic" size={14} /> Mitra Utama</div>
+          <h3>Universitas Al-Azhar Kairo</h3>
+          <p>Universitas Islam tertua dan paling prestisius di dunia — berdiri sejak tahun 970 Masehi. Selama lebih dari seribu tahun, Al-Azhar menjadi pusat keilmuan Islam global yang melahirkan ribuan ulama.</p>
+          <a href="/program/pendaftaran-al-azhar" class="pc-link">Lihat Program Pendaftaran →</a>
+        </div>
+      </div>
+
+      <div class="partner-card fade-in">
+        <div class="pc-thumb"><img src="/images/students.png" alt="Markaz Tathwir" loading="lazy" /></div>
+        <div class="pc-body">
+          <div class="pc-badge"><Icon name="book" size={14} /> Mitra Akademik</div>
+          <h3>Markaz Tathwir Ta'lim</h3>
+          <p>Lembaga resmi penyelenggara tes Tahdid Mustawa dan program matrikulasi bahasa bagi calon mahasiswa internasional Al-Azhar. Mengelola seluruh proses uji kompetensi bahasa Arab 7 level.</p>
+          <a href="/program/arabic-course" class="pc-link">Lihat Program Bahasa Arab →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rumah Hiwar -->
+  <section class="hiwar-section">
+    <div class="container">
+      <div class="hiwar-card fade-in">
+        <div class="hiwar-header">
+          <div class="pc-badge gold"><Icon name="home" size={14} /> Mitra Unggulan</div>
+          <h2>Rumah Hiwar</h2>
+          <p class="hiwar-sub">Rumah Kepembinaan Unggulan di Mesir</p>
+        </div>
+        <div class="hiwar-body">
+          <div class="hiwar-text">
+            <p>Rumah Hiwar adalah rumah kepembinaan untuk mahasiswa baru Al-Azhar dan mahasiswa kelas persiapan bahasa sampai tingkat 4 Universitas Al-Azhar, Mesir.</p>
+            <p>Kurikulumnya berorientasi pada pengembangan intelektualitas, sensitivitas, dan spiritualitas — tiga kunci yang sangat dibutuhkan untuk menaklukan Mesir dan Al-Azhar.</p>
+            <p>Setiap peserta yang mendaftar melalui Nile Edu mendapat <strong>Golden Ticket</strong> — akses eksklusif masuk Rumah Hiwar.</p>
+          </div>
+          <div class="hiwar-features">
+            <div class="hf"><Icon name="book" size={16} /> <span>Ilmu Alat & Maqashid</span></div>
+            <div class="hf"><Icon name="quran" size={16} /> <span>Pemutqinan Hafalan Al-Qur'an</span></div>
+            <div class="hf"><Icon name="shield" size={16} /> <span>Pembinaan Intelektualitas</span></div>
+            <div class="hf"><Icon name="home" size={16} /> <span>Lingkungan Kondusif</span></div>
+            <div class="hf"><Icon name="academic" size={16} /> <span>Kurikulum Terstruktur</span></div>
+            <div class="hf"><Icon name="globe" size={16} /> <span>Pengembangan Spiritualitas</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg"><img src="/images/partnership.png" alt="" loading="lazy" /><div class="cta-overlay"></div></div>
+    <div class="container">
+      <h2 class="fade-in">Tertarik Bermitra dengan Nile Edu?</h2>
+      <p class="fade-in">Kami terbuka untuk kolaborasi dengan lembaga pendidikan, pesantren, dan organisasi yang memiliki visi serupa.</p>
+      <a href={`https://wa.me/${site.contacts[0].whatsapp}?text=Halo, saya tertarik untuk bermitra dengan Nile Edu`} class="btn btn-primary fade-in">Hubungi Kami →</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Partners */
+  .partners-section { padding: 80px 0; }
+
+  .partner-card {
+    display: flex; gap: 28px; align-items: center;
+    padding: 24px; border-radius: var(--radius); background: var(--white);
+    border: 1px solid var(--gray-200); margin-bottom: 20px;
+    transition: var(--transition);
+  }
+  .partner-card:hover { border-color: var(--gold); box-shadow: var(--shadow); }
+  .pc-thumb { width: 200px; height: 150px; border-radius: 14px; overflow: hidden; flex-shrink: 0; }
+  .pc-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .pc-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--gold); background: rgba(0,107,182,0.08);
+    padding: 4px 12px; border-radius: 6px; margin-bottom: 10px;
+  }
+  .pc-badge :global(svg) { color: var(--gold); }
+  .pc-badge.gold { color: var(--white); background: var(--gold); }
+  .pc-badge.gold :global(svg) { color: var(--white); }
+  .pc-body h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .pc-body p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 10px; }
+  .pc-link { font-size: 0.82rem; font-weight: 700; color: var(--gold); transition: var(--transition); }
+  .pc-link:hover { color: var(--navy); }
+
+  /* Rumah Hiwar */
+  .hiwar-section { padding: 80px 0; background: var(--gray-100); }
+  .hiwar-card {
+    padding: 48px 40px; border-radius: 24px;
+    background: var(--navy); color: var(--white);
+    box-shadow: 0 24px 64px rgba(0,40,70,0.15);
+  }
+  .hiwar-header { text-align: center; margin-bottom: 36px; }
+  .hiwar-header h2 { font-size: 1.8rem; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+  .hiwar-sub { font-size: 0.9rem; color: rgba(255,255,255,0.45); }
+  .hiwar-body { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
+  .hiwar-text p { font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 12px; }
+  .hiwar-text strong { color: var(--gold-light); }
+  .hiwar-features { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hf {
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px 14px; border-radius: 10px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.85);
+  }
+  .hf :global(svg) { color: var(--gold-light); flex-shrink: 0; }
+
+  /* CTA */
+  .cta-section { position: relative; padding: 100px 0; text-align: center; overflow: hidden; }
+  .cta-bg { position: absolute; inset: 0; }
+  .cta-bg img { width: 100%; height: 100%; object-fit: cover; }
+  .cta-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,40,70,0.94), rgba(0,61,107,0.88)); }
+  .cta-section .container { position: relative; z-index: 1; }
+  .cta-section h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--white); margin-bottom: 12px; }
+  .cta-section p { color: rgba(255,255,255,0.6); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+  @media (max-width: 768px) {
+    .partner-card { flex-direction: column; }
+    .pc-thumb { width: 100%; height: 180px; }
+    .hiwar-card { padding: 32px 20px; }
+    .hiwar-body { grid-template-columns: 1fr; }
+    .hiwar-features { grid-template-columns: 1fr; }
+  }
+</style>

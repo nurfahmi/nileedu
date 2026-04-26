@@ -1,0 +1,329 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+import site from '../content/site.json';
+---
+
+<Layout title={`${site.companyName} - Pendamping #1 Kuliah ke Timur Tengah`}>
+  <Navbar />
+  <Hero />
+
+  <!-- PAIN POINT -->
+  <section class="sec-pain">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Apakah Kamu Mengalami Ini?</span>
+        <h2>Mimpi Kuliah ke Al-Azhar Tapi <span class="highlight">Bingung Mulai dari Mana?</span></h2>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card fade-in"><div class="pain-icon"><Icon name="question" size={28} /></div><p>Ingin kuliah ke Mesir tapi tidak tahu prosedur pendaftarannya</p></div>
+        <div class="pain-card fade-in"><div class="pain-icon"><Icon name="pencil" size={28} /></div><p>Khawatir gagal tes Tahdid Mustawa karena kurang persiapan bahasa Arab</p></div>
+        <div class="pain-card fade-in"><div class="pain-icon"><Icon name="document" size={28} /></div><p>Bingung mengurus legalisir, terjemah berkas, visa, dan akomodasi</p></div>
+        <div class="pain-card fade-in"><div class="pain-icon"><Icon name="home" size={28} /></div><p>Takut tidak punya tempat tinggal & bimbingan saat baru tiba di Mesir</p></div>
+      </div>
+      <p class="pain-resolve fade-in">Tenang — <strong>Nile Edu hadir untuk menyelesaikan semua itu.</strong></p>
+    </div>
+  </section>
+
+  <!-- SOLUTION: FLAGSHIP PROGRAMS -->
+  <section class="sec-flagship" id="programs">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Program Unggulan Kami</span>
+        <h2>Satu Pintu untuk Semua <span class="highlight">Kebutuhanmu</span></h2>
+        <p>Kami bukan agen biasa — kami pendamping perjalanan studimu dari A sampai Z.</p>
+      </div>
+
+      <!-- Flagship 1: Pendaftaran Al-Azhar -->
+      <div class="flagship-row fade-in">
+        <div class="flagship-img"><img src="/images/al-azhar.png" alt="Al-Azhar Kairo" loading="lazy" /><div class="flagship-badge">Flagship</div></div>
+        <div class="flagship-content">
+          <h3>Pendaftaran Al-Azhar Kairo</h3>
+          <p>Layanan end-to-end yang mencakup seluruh proses masuk Universitas Al-Azhar — dari tes Tahdid Mustawa hingga kamu resmi menjadi mahasiswa.</p>
+          <div class="flagship-includes">
+            <div class="fi"><Icon name="pencil" size={16} /> Tahdid Mustawa & Karantina Persiapan</div>
+            <div class="fi"><Icon name="document" size={16} /> Terjemah & Legalisir 4 Kementerian</div>
+            <div class="fi"><Icon name="shield" size={16} /> Pengurusan Visa & Mu'adalah Ijazah</div>
+            <div class="fi"><Icon name="home" size={16} /> Penjemputan & Penempatan di Mesir</div>
+            <div class="fi"><Icon name="academic" size={16} /> Pendampingan 1 Tahun Pertama</div>
+            <div class="fi"><Icon name="building" size={16} /> Golden Ticket Rumah Hiwar</div>
+          </div>
+          <a href="/program/pendaftaran-al-azhar" class="btn btn-primary">Lihat Detail & Biaya →</a>
+        </div>
+      </div>
+
+      <!-- Flagship 2: Nile Arabic Course -->
+      <div class="flagship-row reverse fade-in">
+        <div class="flagship-img"><img src="/images/pattern.png" alt="Arabic Course" loading="lazy" /><div class="flagship-badge gold">5 Paket</div></div>
+        <div class="flagship-content">
+          <h3>Nile Arabic Course</h3>
+          <p>Kursus bahasa Arab dengan kurikulum Al-Azhar — dirancang khusus untuk pelajar Indonesia yang ingin lulus Tahdid Mustawa di level tinggi.</p>
+          <div class="flagship-includes">
+            <div class="fi"><Icon name="book" size={16} /> Persiapan Tes Masuk Al-Azhar</div>
+            <div class="fi"><Icon name="pencil" size={16} /> Intensif 4 Keterampilan Bahasa (6 Level)</div>
+            <div class="fi"><Icon name="academic" size={16} /> Gramatikal: Nahwu, Sharaf, Balaghah</div>
+            <div class="fi"><Icon name="clipboard" size={16} /> Intensif Baca Kitab Klasik</div>
+            <div class="fi"><Icon name="chat" size={16} /> Muhadatsah dengan Native Arab</div>
+          </div>
+          <a href="/program/arabic-course" class="btn btn-primary">Lihat Paket Kursus →</a>
+        </div>
+      </div>
+
+      <!-- Flagship 3: Global Discovery -->
+      <div class="flagship-row fade-in">
+        <div class="flagship-img"><img src="/images/cairo-skyline.png" alt="Global Discovery" loading="lazy" /><div class="flagship-badge">Eksklusif</div></div>
+        <div class="flagship-content">
+          <h3>Nile Global Discovery</h3>
+          <p>Program perjalanan edukasi ke Timur Tengah — memadukan pendalaman Al-Qur'an bersanad, kursus intensif bahasa Arab, dan napak tilas sejarah Islam.</p>
+          <div class="flagship-includes">
+            <div class="fi"><Icon name="quran" size={16} /> Al-Qur'an Bersanad</div>
+            <div class="fi"><Icon name="chat" size={16} /> Arabic Course Intensif</div>
+            <div class="fi"><Icon name="globe" size={16} /> Napak Tilas Sejarah Islam</div>
+          </div>
+          <a href="/program/global-discovery" class="btn btn-primary">Selengkapnya →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="sec-steps" id="steps">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Alur Pendaftaran</span>
+        <h2>Hanya 3 Tahap Menuju <span class="highlight">Al-Azhar Kairo</span></h2>
+        <p>Proses transparan dan terstruktur — kamu tahu persis apa yang harus dilakukan di setiap tahap.</p>
+      </div>
+      <div class="steps-timeline">
+        {site.registration.steps.map((s, i) => (
+          <div class="step-card fade-in">
+            <div class="step-connector"><div class="step-num">{i + 1}</div>{i < site.registration.steps.length - 1 && <div class="step-line" />}</div>
+            <div class="step-body">
+              <h3>{s.title}</h3>
+              <p>{s.description}</p>
+              <div class="step-price">{s.price}</div>
+              <span class="step-note">{s.note}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US / SOCIAL PROOF -->
+  <section class="sec-why" id="why">
+    <div class="sec-why-bg"><img src="/images/students.png" alt="" loading="lazy" /><div class="sec-why-overlay"></div></div>
+    <div class="container">
+      <div class="why-layout">
+        <div class="why-left fade-in">
+          <span class="section-label accent">Kenapa Nile Edu?</span>
+          <h2 class="white">Bukan Sekadar Agen — <br/>Kami <span class="highlight-gold">Pendampingmu</span></h2>
+          <p class="why-desc">Dari proses di Indonesia hingga satu tahun pertama di Mesir, kami mendampingimu. Kami tahu persis apa yang kamu butuhkan — karena kami alumni Al-Azhar.</p>
+        </div>
+        <div class="why-right">
+          {site.whyUs.map(item => (
+            <div class="why-card fade-in">
+              <div class="why-icon"><Icon name={item.icon} size={24} /></div>
+              <div><h3>{item.title}</h3><p>{item.description}</p></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="sec-testi">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Cerita Alumni</span>
+        <h2>Mereka Sudah <span class="highlight">Membuktikannya</span></h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card fade-in">
+          <p>"Nile Edu benar-benar membantu saya dari awal sampai akhir. Prosesnya transparan dan timnya sangat responsif. Alhamdulillah sekarang saya sudah resmi menjadi mahasiswa Al-Azhar."</p>
+          <div class="testi-author"><div class="testi-avatar">A</div><div><strong>Ahmad Fadhil</strong><span>Alumni 2024</span></div></div>
+        </div>
+        <div class="testi-card fade-in">
+          <p>"Program karantina sangat membantu saya lulus Tahdid Mustawa di level yang lebih tinggi dari ekspektasi. Kursusnya terstruktur dan gurunya berpengalaman."</p>
+          <div class="testi-author"><div class="testi-avatar">M</div><div><strong>Muhammad Rizky</strong><span>Alumni 2024</span></div></div>
+        </div>
+        <div class="testi-card fade-in">
+          <p>"Yang paling saya suka adalah pendampingan saat di Mesir. Saya tidak merasa sendirian karena tim Nile Edu terus memantau dan membantu adaptasi."</p>
+          <div class="testi-author"><div class="testi-avatar">I</div><div><strong>Ibrahim Hakim</strong><span>Alumni 2025</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE RESOURCES -->
+  <section class="sec-resources" id="resources">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Belum Yakin? Coba Dulu Gratis</span>
+        <h2>Layanan Gratis untuk <span class="highlight">Mulai Langkahmu</span></h2>
+      </div>
+      <div class="resource-grid">
+        {site.freeResources.map(r => (
+          <div class="resource-card fade-in">
+            <div class="resource-icon"><Icon name={r.icon} size={28} /></div>
+            <h3>{r.title}</h3>
+            <p>{r.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec-faq">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">FAQ</span>
+        <h2>Pertanyaan yang Sering Diajukan</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item fade-in"><summary>Apakah saya harus bisa bahasa Arab dulu untuk mendaftar?</summary><p>Tidak harus. Nile Edu menyediakan Nile Arabic Course mulai dari level pemula. Kami juga mengadakan placement test gratis untuk menentukan level yang sesuai untukmu.</p></details>
+        <details class="faq-item fade-in"><summary>Berapa total biaya pendaftaran ke Al-Azhar?</summary><p>Total biaya pendaftaran melalui Nile Edu adalah Rp 26.000.000, yang dibayar secara bertahap dalam 3 tahap sesuai milestone proses pendaftaran.</p></details>
+        <details class="faq-item fade-in"><summary>Apa itu Tahdid Mustawa?</summary><p>Tahdid Mustawa adalah tes uji kompetensi bahasa Arab yang wajib diikuti setiap calon mahasiswa baru Al-Azhar. Hasil tes ini menentukan level matrikulasi bahasa yang harus ditempuh (dari 7 level).</p></details>
+        <details class="faq-item fade-in"><summary>Apa itu Rumah Hiwar?</summary><p>Rumah Hiwar adalah asrama kepembinaan unggulan di Mesir, dengan fokus pada pengembangan intelektualitas, sensitivitas, dan spiritualitas. Pendaftar Nile Edu mendapat akses eksklusif (Golden Ticket).</p></details>
+        <details class="faq-item fade-in"><summary>Apakah Nile Edu berbadan hukum resmi?</summary><p>Ya. PT Nile Edu Internasional sah berdasarkan keputusan Menteri Hukum RI dengan nomor {site.legalNumber}.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="sec-cta" id="cta">
+    <div class="cta-bg"><img src="/images/al-azhar.png" alt="" loading="lazy" /><div class="cta-overlay"></div></div>
+    <div class="container">
+      <h2 class="fade-in">Jangan Tunda Mimpimu Lebih Lama</h2>
+      <p class="cta-desc fade-in">Pendaftaran Al-Azhar 2026 sudah dibuka. Konsultasi gratis sekarang — tanpa biaya, tanpa komitmen.</p>
+      <div class="cta-buttons fade-in">
+        {site.contacts.map(c => (
+          <a href={`https://wa.me/${c.whatsapp}?text=Halo Kak ${c.name}, saya tertarik untuk kuliah di Al-Azhar. Bisa konsultasi?`} class="btn btn-primary">Chat {c.name} →</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .highlight { color: var(--gold); }
+  .highlight-gold { color: var(--gold-light); }
+  .white { color: var(--white) !important; }
+  .accent { color: var(--gold-light) !important; }
+
+  /* Pain Points */
+  .sec-pain { padding: 100px 0; background: var(--white); }
+  .pain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 32px; }
+  .pain-card { padding: 28px 20px; border-radius: var(--radius); border: 1px solid var(--gray-200); text-align: center; transition: var(--transition); }
+  .pain-card:hover { border-color: var(--gold); box-shadow: var(--shadow); transform: translateY(-4px); }
+  .pain-icon { width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, rgba(0,107,182,0.12), rgba(0,107,182,0.04)); display: flex; align-items: center; justify-content: center; color: var(--gold); margin: 0 auto 14px; }
+  .pain-card p { font-size: 0.88rem; color: var(--gray-700); line-height: 1.7; }
+  .pain-resolve { text-align: center; font-size: 1.05rem; color: var(--navy); }
+
+  /* Flagship Programs */
+  .sec-flagship { padding: 100px 0; background: var(--gray-100); }
+  .flagship-row { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center; margin-bottom: 80px; }
+  .flagship-row.reverse { grid-template-columns: 1.2fr 1fr; }
+  .flagship-row.reverse .flagship-img { order: 2; }
+  .flagship-row.reverse .flagship-content { order: 1; }
+  .flagship-img { position: relative; border-radius: 20px; overflow: hidden; }
+  .flagship-img img { width: 100%; height: 340px; object-fit: cover; }
+  .flagship-badge { position: absolute; top: 16px; left: 16px; padding: 6px 16px; border-radius: 50px; background: var(--navy); color: var(--white); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .flagship-badge.gold { background: var(--gold); }
+  .flagship-content h3 { font-size: 1.5rem; font-weight: 800; color: var(--navy); margin-bottom: 12px; }
+  .flagship-content > p { font-size: 0.92rem; color: var(--gray-500); line-height: 1.8; margin-bottom: 20px; }
+  .flagship-includes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 24px; }
+  .fi { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--navy); font-weight: 500; padding: 8px 12px; border-radius: 10px; background: var(--white); border: 1px solid var(--gray-200); }
+  .fi :global(svg) { color: var(--gold); flex-shrink: 0; }
+
+  /* Steps */
+  .sec-steps { padding: 100px 0; }
+  .steps-timeline { display: flex; flex-direction: column; max-width: 700px; margin: 0 auto; }
+  .step-card { display: flex; gap: 24px; }
+  .step-connector { display: flex; flex-direction: column; align-items: center; }
+  .step-num { width: 44px; height: 44px; border-radius: 50%; background: var(--gold); color: var(--white); font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-line { width: 2px; flex: 1; background: linear-gradient(var(--gold), var(--gray-200)); min-height: 40px; }
+  .step-body { padding-bottom: 40px; }
+  .step-body h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .step-body > p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 12px; }
+  .step-price { font-weight: 800; font-size: 1.2rem; color: var(--gold); }
+  .step-note { font-size: 0.78rem; color: var(--gray-500); }
+
+  /* Why Us */
+  .sec-why { position: relative; padding: 100px 0; overflow: hidden; }
+  .sec-why-bg { position: absolute; inset: 0; }
+  .sec-why-bg img { width: 100%; height: 100%; object-fit: cover; }
+  .sec-why-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,40,70,0.94), rgba(0,40,70,0.88)); }
+  .why-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .why-left h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--white); margin-bottom: 16px; line-height: 1.3; }
+  .why-desc { font-size: 1rem; color: rgba(255,255,255,0.55); line-height: 1.8; }
+  .why-right { display: grid; gap: 14px; }
+  .why-card { display: flex; gap: 16px; align-items: flex-start; padding: 18px 22px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); transition: var(--transition); }
+  .why-card:hover { background: rgba(255,255,255,0.08); transform: translateX(8px); }
+  .why-icon { width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0; background: linear-gradient(135deg, rgba(38,143,217,0.25), rgba(38,143,217,0.1)); display: flex; align-items: center; justify-content: center; color: var(--gold-light); }
+  .why-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .why-card p { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  /* Testimonials */
+  .sec-testi { padding: 100px 0; background: var(--gray-100); }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .testi-card { background: var(--white); padding: 28px; border-radius: var(--radius); border: 1px solid var(--gray-200); transition: var(--transition); }
+  .testi-card:hover { border-color: var(--gold); box-shadow: var(--shadow); }
+  .testi-card > p { font-size: 0.9rem; color: var(--gray-700); line-height: 1.8; font-style: italic; margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--gold); }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 800; }
+  .testi-author strong { display: block; font-size: 0.88rem; color: var(--navy); }
+  .testi-author span { font-size: 0.75rem; color: var(--gray-500); }
+
+  /* Resources */
+  .sec-resources { padding: 100px 0; }
+  .resource-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .resource-card { text-align: center; padding: 32px 18px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--gray-200); transition: var(--transition); }
+  .resource-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+  .resource-icon { width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, rgba(0,107,182,0.12), rgba(0,107,182,0.04)); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: var(--gold); }
+  .resource-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .resource-card p { font-size: 0.8rem; color: var(--gray-500); line-height: 1.6; }
+
+  /* FAQ */
+  .sec-faq { padding: 100px 0; background: var(--gray-100); }
+  .faq-list { max-width: 700px; margin: 0 auto; }
+  .faq-item { margin-bottom: 12px; border-radius: 14px; background: var(--white); border: 1px solid var(--gray-200); overflow: hidden; transition: var(--transition); }
+  .faq-item[open] { border-color: var(--gold); }
+  .faq-item summary { padding: 18px 24px; font-weight: 700; font-size: 0.95rem; color: var(--navy); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--gold); font-weight: 300; transition: var(--transition); }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 24px 18px; font-size: 0.88rem; color: var(--gray-500); line-height: 1.8; }
+
+  /* CTA */
+  .sec-cta { position: relative; padding: 120px 0; text-align: center; overflow: hidden; }
+  .cta-bg { position: absolute; inset: 0; }
+  .cta-bg img { width: 100%; height: 100%; object-fit: cover; }
+  .cta-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,40,70,0.94), rgba(0,61,107,0.88)); }
+  .sec-cta .container { position: relative; z-index: 1; }
+  .sec-cta h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; color: var(--white); margin-bottom: 16px; }
+  .cta-desc { color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto 36px; font-size: 1rem; }
+  .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .pain-grid { grid-template-columns: repeat(2, 1fr); }
+    .flagship-row, .flagship-row.reverse { grid-template-columns: 1fr; }
+    .flagship-row.reverse .flagship-img, .flagship-row.reverse .flagship-content { order: unset; }
+    .resource-grid { grid-template-columns: repeat(2, 1fr); }
+    .testi-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .pain-grid { grid-template-columns: 1fr; }
+    .flagship-includes { grid-template-columns: 1fr; }
+    .why-layout { grid-template-columns: 1fr; gap: 40px; }
+    .resource-grid { grid-template-columns: 1fr; }
+  }
+</style>

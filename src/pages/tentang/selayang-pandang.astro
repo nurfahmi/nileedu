@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
+import site from '../../content/site.json';
+---
+
+<Layout title={`Selayang Pandang - ${site.companyName}`}>
+  <Navbar />
+  <PageHeader title="Selayang Pandang" subtitle="Tentang Kami" description="Mengenal lebih dekat PT Nile Edu Internasional — mediator & konsultan pendidikan ke Timur Tengah." image="/images/students.png" />
+
+  <section class="story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-img fade-in"><img src="/images/program-arabic.png" alt="Nile Edu" loading="lazy" /></div>
+        <div class="story-text fade-in">
+          <h2>Salam Hangat dari Bumi Kinanah</h2>
+          <p>{site.about.philosophy}</p>
+          <p>{site.about.description}</p>
+          <div class="legal-badge"><Icon name="shield" size={16} /> Badan hukum resmi — {site.legalNumber}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vision-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label accent">Arah Kami</span>
+        <h2 class="white">Visi & Misi</h2>
+      </div>
+      <div class="vision-grid">
+        <div class="vision-card fade-in">
+          <h3>Visi</h3>
+          <p>{site.about.vision}</p>
+        </div>
+        <div class="mission-card fade-in">
+          <h3>Misi</h3>
+          <ol>
+            {site.about.missions.map(m => <li>{m}</li>)}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Kenapa Memilih Kami?</span>
+        <h2>Keunggulan Nile Edu</h2>
+      </div>
+      <div class="why-grid">
+        {site.whyUs.map(item => (
+          <div class="why-card fade-in">
+            <div class="why-icon"><Icon name={item.icon} size={28} /></div>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<style>
+  .white { color: var(--white) !important; }
+  .accent { color: var(--gold-light) !important; }
+  .story { padding: 80px 0; }
+  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .story-img img { width: 100%; border-radius: var(--radius); }
+  .story-text h2 { font-size: 1.8rem; font-weight: 800; color: var(--navy); margin-bottom: 18px; }
+  .story-text p { font-size: 0.95rem; color: var(--gray-700); line-height: 1.9; margin-bottom: 16px; }
+  .legal-badge { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--gray-500); padding: 12px 16px; background: var(--gray-100); border-radius: 10px; margin-top: 8px; }
+  .legal-badge svg { color: var(--gold); flex-shrink: 0; }
+
+  .vision-section { padding: 80px 0; background: var(--navy); }
+  .vision-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 28px; }
+  .vision-card, .mission-card { padding: 36px; border-radius: var(--radius); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+  .vision-card h3, .mission-card h3 { font-size: 1rem; font-weight: 700; color: var(--gold-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+  .vision-card p { font-size: 1.05rem; color: rgba(255,255,255,0.7); line-height: 1.9; }
+  .mission-card ol { padding-left: 18px; margin: 0; }
+  .mission-card li { font-size: 0.92rem; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 10px; }
+
+  .why-section { padding: 80px 0; background: var(--gray-100); }
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .why-card { padding: 32px; border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); display: flex; gap: 20px; align-items: flex-start; transition: var(--transition); }
+  .why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .why-icon { width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(135deg, rgba(0,107,182,0.12), rgba(0,107,182,0.04)); display: flex; align-items: center; justify-content: center; color: var(--gold); flex-shrink: 0; }
+  .why-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .why-card p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.7; }
+
+  @media (max-width: 768px) { .story-grid, .vision-grid, .why-grid { grid-template-columns: 1fr; } }
+</style>

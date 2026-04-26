@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Footer from '../../components/Footer.astro';
+import site from '../../content/site.json';
+---
+
+<Layout title={`Our Team - ${site.companyName}`}>
+  <Navbar />
+  <PageHeader title="Our Team" subtitle="Tentang Kami" description="Tim profesional di balik Nile Edu — alumni Al-Azhar yang berdedikasi mendampingi perjalanan studimu." image="/images/students.png" />
+
+  <section class="team-section">
+    <div class="container">
+      <div class="team-grid">
+        {site.contacts.map(c => (
+          <div class="team-card fade-in">
+            <div class="team-avatar">{c.name.charAt(0)}</div>
+            <h3>{c.name}</h3>
+            <span class="team-role">{c.role}</span>
+            <a href={`https://wa.me/${c.whatsapp}`} class="team-wa">Chat via WhatsApp →</a>
+          </div>
+        ))}
+      </div>
+      <div class="team-info fade-in">
+        <h3>Bergabung dengan Tim Kami?</h3>
+        <p>Kami selalu membuka peluang untuk kolaborasi. Hubungi kami melalui email di <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<style>
+  .team-section { padding: 80px 0; }
+  .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 700px; margin: 0 auto; }
+  .team-card { text-align: center; padding: 40px 28px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--gray-200); transition: var(--transition); }
+  .team-card:hover { border-color: var(--gold); box-shadow: var(--shadow); transform: translateY(-4px); }
+  .team-avatar { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.8rem; margin: 0 auto 16px; }
+  .team-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .team-role { font-size: 0.85rem; color: var(--gray-500); display: block; margin-bottom: 16px; }
+  .team-wa { display: inline-block; font-size: 0.85rem; font-weight: 600; color: var(--gold); transition: var(--transition); }
+  .team-wa:hover { color: var(--gold-light); }
+  .team-info { text-align: center; margin-top: 48px; padding: 32px; border-radius: var(--radius); background: var(--cream); max-width: 500px; margin-left: auto; margin-right: auto; }
+  .team-info h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .team-info p { font-size: 0.9rem; color: var(--gray-500); }
+  .team-info a { color: var(--gold); font-weight: 600; }
+  @media (max-width: 768px) { .team-grid { grid-template-columns: 1fr; } }
+</style>

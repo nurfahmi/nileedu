@@ -1,0 +1,226 @@
+{
+  "companyName": "PT Nile Edu Internasional",
+  "tagline": "Mediator & Konsultan Pendidikan ke Timur Tengah",
+  "legalNumber": "AHU 0015488.AH.01.01 Tahun 2026",
+  "address": "Jl. Pilangraya No. 70, Desa/Kelurahan Sukapura, Kec. Kejaksan, Kota Cirebon, Jawa Barat 45122",
+  "email": "nileeduinternasional@gmail.com",
+  "registrationLink": "https://bit.ly/pendaftaran-alazhar-nileedu2026",
+
+  "contacts": [
+    { "name": "Mughnil Labib", "whatsapp": "6282119861794", "role": "Konsultan" },
+    { "name": "Hizbulloh", "whatsapp": "6282138651813", "role": "Konsultan" }
+  ],
+
+  "social": {
+    "instagram": "https://www.instagram.com/nile.edu.eg",
+    "facebook": "https://www.facebook.com/NileEduInternasional",
+    "tiktok": "https://www.tiktok.com/@nileeduinternasional"
+  },
+
+  "hero": {
+    "badge": "Pendaftaran Al-Azhar 2026 Telah Dibuka",
+    "headline": "Wujudkan Mimpi Kuliah di Al-Azhar Kairo",
+    "subheadline": "Bersama Nile Edu",
+    "description": "Pendampingan profesional dari persiapan bahasa Arab, seleksi masuk, hingga keberangkatan dan pembinaan selama di Mesir — oleh tim alumni Al-Azhar yang berpengalaman.",
+    "ctaPrimary": "Lihat Program Kami",
+    "ctaSecondary": "Konsultasi Gratis",
+    "stats": [
+      { "value": "4+", "label": "Tahun Berpengalaman" },
+      { "value": "7", "label": "Level Matrikulasi" },
+      { "value": "5", "label": "Paket Kursus Arab" },
+      { "value": "1085", "label": "Tahun Al-Azhar Berdiri" }
+    ]
+  },
+
+  "programs": [
+    {
+      "image": "/images/program-arabic.png",
+      "title": "Nile Arabic Course",
+      "href": "/program/arabic-course",
+      "description": "Program kursus bahasa Arab komprehensif — mulai dari persiapan tes masuk Al-Azhar, penguasaan 4 keterampilan bahasa, gramatikal, baca kitab, hingga praktik percakapan langsung dengan penutur asli Arab."
+    },
+    {
+      "image": "/images/program-scholarship.png",
+      "title": "Pendaftaran Al-Azhar Kairo",
+      "href": "/program/pendaftaran-al-azhar",
+      "description": "Layanan pendampingan menyeluruh untuk pendaftaran ke Universitas Al-Azhar — mencakup Tahdid Mustawa, terjemah & legalisir berkas, pengurusan visa, hingga penjemputan dan penempatan di Mesir."
+    },
+    {
+      "image": "/images/program-discovery.png",
+      "title": "Nile Global Discovery",
+      "href": "/program/global-discovery",
+      "description": "Program perjalanan edukasi internasional yang memadukan pendalaman Al-Qur'an bersanad, intensif bahasa Arab, dan napak tilas situs-situs bersejarah Islam di Timur Tengah."
+    }
+  ],
+
+  "arabicCourse": {
+    "sectionTitle": "5 Paket Kursus Bahasa Arab",
+    "sectionDesc": "Kurikulum terstruktur dengan placement test untuk menentukan level yang tepat bagi setiap peserta.",
+    "packages": [
+      {
+        "title": "Persiapan Kuliah di Mesir",
+        "description": "Modul eksklusif yang disusun oleh Official Nile Edu, dilengkapi bank soal dan try out untuk persiapan tes Tahdid Mustawa di Al-Azhar."
+      },
+      {
+        "title": "Intensif 4 Keterampilan Bahasa",
+        "description": "Enam level pembelajaran menggunakan kitab Tuhfah Azhariyyah karya ulama Al-Azhar — cocok bagi pemula hingga tingkat lanjut."
+      },
+      {
+        "title": "Gramatikal Bahasa Arab",
+        "description": "Pendalaman kaidah bahasa Arab secara sistematis: Ilmu Nahwu (3 level), Ilmu Sharaf (3 level), dan Ilmu Balaghah (3 level)."
+      },
+      {
+        "title": "Intensif Baca Kitab",
+        "description": "Mengaplikasikan kaidah bahasa Arab dalam pembacaan teks dan kitab klasik — ideal bagi lulusan pesantren dan mahasiswa bahasa Arab."
+      },
+      {
+        "title": "Muhadatsah dengan Native Arab",
+        "description": "Praktik percakapan langsung dengan penutur asli Arab, termasuk pelatihan lahjah (dialek) untuk meningkatkan kelancaran berbicara."
+      }
+    ],
+    "freeCourses": [
+      "Mahir Tashrif",
+      "Mahir Dhomir",
+      "Mahir 'Adad Ma'dud",
+      "Mahir Mubtada' Khobar",
+      "Mahir Fi'il Fa'il"
+    ]
+  },
+
+  "whyUs": [
+    {
+      "icon": "building",
+      "title": "Berpengalaman 4+ Tahun",
+      "description": "Track record yang terbukti dalam mendampingi ratusan calon mahasiswa hingga resmi terdaftar di Universitas Al-Azhar Kairo."
+    },
+    {
+      "icon": "book",
+      "title": "Program Karantina Intensif",
+      "description": "Fasilitas karantina khusus untuk mempersiapkan peserta menghadapi tes Tahdid Mustawa dengan hasil maksimal."
+    },
+    {
+      "icon": "shield",
+      "title": "Pembinaan End-to-End",
+      "description": "Pengawasan dan pendampingan menyeluruh — dari proses di Indonesia hingga satu tahun pertama kehidupan di Mesir."
+    },
+    {
+      "icon": "home",
+      "title": "Golden Ticket Rumah Hiwar",
+      "description": "Akses eksklusif ke asrama kepembinaan Rumah Hiwar — rumah pembinaan unggulan bagi mahasiswa baru Al-Azhar di Mesir."
+    }
+  ],
+
+  "registration": {
+    "sectionTitle": "3 Tahap Menuju Al-Azhar Kairo",
+    "sectionDesc": "Proses yang transparan dan terstruktur, dari pendaftaran hingga keberangkatan ke Negeri Seribu Menara.",
+    "steps": [
+      {
+        "title": "Pendaftaran & Tahdid Mustawa",
+        "description": "Mengisi formulir pendaftaran online, bergabung di grup WhatsApp resmi, dan mengikuti tes uji kompetensi bahasa Arab (Tahdid Mustawa).",
+        "price": "Rp 2.000.000",
+        "note": "Dibayar saat mendaftar"
+      },
+      {
+        "title": "Legalisir & Administrasi",
+        "description": "Penerjemahan berkas resmi, legalisir di 4 kementerian, pendaftaran kuliah, pengurusan visa, serta mu'adalah ijazah bagi yang membutuhkan.",
+        "price": "Rp 9.500.000",
+        "note": "Dibayar sebelum tes Tahdid Mustawa"
+      },
+      {
+        "title": "Keberangkatan & Penempatan",
+        "description": "Mencakup tiket pesawat, layanan ground handling, penjemputan di bandara Mesir, penempatan rumah, gratis sewa 1 bulan pertama, dan pendampingan intensif.",
+        "price": "Rp 14.500.000",
+        "note": "Dibayar setelah visa turun"
+      }
+    ],
+    "documents": [
+      "Paspor asli",
+      "Akte kelahiran asli",
+      "Fotokopi KTP",
+      "Fotokopi Kartu Keluarga",
+      "Ijazah asli dan transkrip",
+      "Pas foto 4x6 background putih (5 lembar)"
+    ]
+  },
+
+  "about": {
+    "headline": "PT Nile Edu Internasional",
+    "philosophy": "Sungai Nil adalah 'jantung kehidupan' bagi Mesir — sumber air utama bagi segenap makhluk yang tinggal di sana. Di Negeri Seribu Menara ini pula terdapat benteng Islam sekaligus kiblat keilmuan Islam yang tak henti melahirkan para ulama, yaitu Al-Azhar.",
+    "description": "Filosofi Sungai Nil menginspirasi kami untuk melahirkan Nile Edu — mediator yang membantu para pelajar Indonesia mengais ilmu sebanyak-banyaknya di Universitas Al-Azhar, Mesir. Kami berkomitmen memberikan pelayanan yang transparan, tertib, dan terpercaya.",
+    "vision": "Menjadi pusat layanan konsultasi pendidikan internasional dan pengembangan bahasa Arab terdepan di Indonesia yang amanah, profesional, dan berkelas dunia.",
+    "missions": [
+      "Memberikan layanan pendampingan studi ke universitas di luar negeri secara komprehensif — dari proses pendaftaran hingga menetap di negara tujuan.",
+      "Menyelenggarakan program bimbingan tes masuk universitas tujuan dengan metode yang akurat dan berbasis teknologi.",
+      "Mengembangkan kursus bahasa Arab online dengan standar kurikulum lokal dan internasional untuk berbagai tingkatan usia.",
+      "Membangun ekosistem pendidikan digital yang memudahkan akses ilmu bagi seluruh pelajar di Indonesia."
+    ]
+  },
+
+  "discovery": {
+    "headline": "Jelajahi Dunia, Perkaya Jiwa",
+    "description": "Program perjalanan edukasi internasional yang dirancang untuk memberikan pengalaman spiritual dan intelektual mendalam. Kami percaya bahwa belajar tidak hanya terjadi di dalam ruang kelas, namun juga melalui interaksi langsung dengan peradaban dan sejarah dunia Islam.",
+    "pillars": [
+      {
+        "icon": "quran",
+        "title": "Al-Qur'an Bersanad",
+        "description": "Fasilitas memperdalam hafalan dan bacaan Al-Qur'an dengan bimbingan langsung untuk mendapatkan sanad — memastikan kualitas bacaan yang terjaga sesuai tuntunan."
+      },
+      {
+        "icon": "chat",
+        "title": "Arabic Course Intensif",
+        "description": "Kursus bahasa Arab yang berfokus pada kemampuan komunikasi praktis — memungkinkan peserta berinteraksi dan memahami literatur Islam langsung di negara penutur aslinya."
+      },
+      {
+        "icon": "globe",
+        "title": "Napak Tilas Sejarah Islam",
+        "description": "Perjalanan edukatif mengunjungi situs-situs bersejarah Islam yang ikonik — menumbuhkan apresiasi terhadap warisan peradaban Muslim dunia."
+      }
+    ]
+  },
+
+  "partners": [
+    {
+      "icon": "academic",
+      "name": "Universitas Al-Azhar Kairo",
+      "description": "Universitas Islam tertua dan paling prestisius di dunia, telah beroperasi selama lebih dari 1.085 tahun sebagai pusat keilmuan Islam global."
+    },
+    {
+      "icon": "book",
+      "name": "Markaz Tathwir Ta'lim",
+      "description": "Lembaga resmi penyelenggara tes Tahdid Mustawa dan program matrikulasi bahasa bagi calon mahasiswa internasional Al-Azhar."
+    },
+    {
+      "icon": "home",
+      "name": "Rumah Hiwar",
+      "description": "Rumah kepembinaan unggulan di Mesir yang berfokus pada pengembangan intelektualitas, sensitivitas, dan spiritualitas mahasiswa Al-Azhar."
+    }
+  ],
+
+  "freeResources": [
+    {
+      "icon": "pencil",
+      "title": "Tes Kemampuan Bahasa Arab",
+      "description": "Placement test gratis untuk mengukur level kemampuan bahasa Arabmu secara akurat."
+    },
+    {
+      "icon": "document",
+      "title": "Ebook Panduan Meraih Beasiswa",
+      "description": "Panduan langkah demi langkah untuk meraih beasiswa studi ke Timur Tengah."
+    },
+    {
+      "icon": "clipboard",
+      "title": "Ebook Daftar Beasiswa",
+      "description": "Kompilasi lengkap beasiswa yang tersedia di berbagai universitas Timur Tengah."
+    },
+    {
+      "icon": "chat",
+      "title": "Konsultasi Personal Gratis",
+      "description": "Sesi konsultasi langsung via WhatsApp dengan tim konsultan berpengalaman Nile Edu."
+    }
+  ],
+
+  "cta": {
+    "headline": "Siap Menaklukkan Al-Azhar?",
+    "description": "Mulai langkah pertamamu menuju Mesir. Konsultasi gratis bersama tim Nile Edu — tanpa biaya, tanpa komitmen."
+  }
+}

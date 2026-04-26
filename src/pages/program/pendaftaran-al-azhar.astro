@@ -1,0 +1,155 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
+import site from '../../content/site.json';
+---
+
+<Layout title={`Pendaftaran Al-Azhar Kairo - ${site.companyName}`}>
+  <Navbar />
+  <PageHeader title="Pendaftaran Al-Azhar Kairo" subtitle="Program" description="Layanan pendampingan menyeluruh untuk pendaftaran ke Universitas Al-Azhar — dari Tahdid Mustawa hingga keberangkatan ke Mesir." image="/images/al-azhar.png" />
+
+  <!-- Intro -->
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-grid fade-in">
+        <div class="intro-img"><img src="/images/al-azhar.png" alt="Al-Azhar University" loading="lazy" /></div>
+        <div class="intro-text">
+          <h2>Universitas Islam Tertua di Dunia</h2>
+          <p>Al-Azhar berdiri sejak 970 Masehi dan telah menjadi pusat keilmuan Islam selama lebih dari seribu tahun. Setiap tahunnya, ribuan pelajar dari seluruh dunia mendaftar untuk menimba ilmu di universitas legendaris ini.</p>
+          <p>Nile Edu hadir sebagai jembatan bagi pelajar Indonesia — memastikan proses pendaftaranmu berjalan lancar, transparan, dan tanpa hambatan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="steps-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Alur Pendaftaran</span>
+        <h2>{site.registration.sectionTitle}</h2>
+        <p>{site.registration.sectionDesc}</p>
+      </div>
+      <div class="steps-grid">
+        {site.registration.steps.map((s, i) => (
+          <div class="step-card fade-in">
+            <div class="step-badge">Tahap {i + 1}</div>
+            <h3>{s.title}</h3>
+            <p>{s.description}</p>
+            <div class="step-footer">
+              <div class="step-price">{s.price}</div>
+              <span class="step-note">{s.note}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Documents -->
+  <section class="docs-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Persyaratan</span>
+        <h2>Berkas yang Dibutuhkan</h2>
+      </div>
+      <div class="docs-grid">
+        {site.registration.documents.map((d, i) => (
+          <div class="doc-card fade-in">
+            <span class="doc-num">{i + 1}</span>
+            <span>{d}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Cards -->
+  <section class="info-section">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-block fade-in">
+          <div class="info-icon"><Icon name="document" size={28} /></div>
+          <h3>Tentang Tahdid Mustawa</h3>
+          <p>Uji Kompetensi Bahasa yang wajib diikuti setiap calon mahasiswa baru. Matrikulasi terdiri atas 7 level, mulai dari pemula hingga mahir.</p>
+        </div>
+        <div class="info-block fade-in">
+          <div class="info-icon"><Icon name="academic" size={28} /></div>
+          <h3>Proses Pendaftaran</h3>
+          <p>Mengisi formulir online, bergabung di grup WhatsApp, dan menerima informasi berkala terkait jadwal pelaksanaan Tahdid al-Mustawa.</p>
+        </div>
+        <div class="info-block fade-in">
+          <div class="info-icon"><Icon name="book" size={28} /></div>
+          <h3>Kegiatan Belajar</h3>
+          <p>Matrikulasi bahasa 1 bulan per level, 6 jam per hari (Sabtu–Kamis). Tersedia program karantina untuk persiapan lebih matang.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg"><img src="/images/al-azhar.png" alt="" loading="lazy" /><div class="cta-overlay"></div></div>
+    <div class="container">
+      <h2 class="fade-in">Siap Mendaftar ke Al-Azhar?</h2>
+      <p class="fade-in">Hubungi kami untuk memulai proses pendaftaranmu. Konsultasi gratis.</p>
+      <div class="cta-buttons fade-in">
+        {site.contacts.map(c => (
+          <a href={`https://wa.me/${c.whatsapp}?text=Halo, saya ingin mendaftar Al-Azhar`} class="btn btn-primary">Chat {c.name} →</a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<style>
+  .intro-section { padding: 80px 0; }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center; }
+  .intro-img { border-radius: 20px; overflow: hidden; }
+  .intro-img img { width: 100%; height: 320px; object-fit: cover; }
+  .intro-text h2 { font-size: 1.6rem; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+  .intro-text p { font-size: 0.92rem; color: var(--gray-500); line-height: 1.8; margin-bottom: 12px; }
+
+  .steps-section { padding: 80px 0; background: var(--gray-100); }
+  .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .step-card { background: var(--white); padding: 36px 28px; border-radius: var(--radius); box-shadow: var(--shadow); transition: var(--transition); display: flex; flex-direction: column; }
+  .step-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .step-badge { display: inline-block; font-size: 0.72rem; font-weight: 700; color: var(--white); background: var(--gold); padding: 4px 14px; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; width: fit-content; }
+  .step-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .step-card > p { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 20px; line-height: 1.7; flex: 1; }
+  .step-footer { border-top: 1px solid var(--gray-200); padding-top: 16px; }
+  .step-price { font-weight: 800; font-size: 1.15rem; color: var(--gold); }
+  .step-note { display: block; font-size: 0.78rem; color: var(--gray-500); margin-top: 4px; }
+
+  .docs-section { padding: 80px 0; }
+  .docs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .doc-card { display: flex; align-items: center; gap: 14px; padding: 18px 20px; background: var(--white); border-radius: 12px; border: 1px solid var(--gray-200); font-size: 0.9rem; color: var(--navy); font-weight: 500; transition: var(--transition); }
+  .doc-card:hover { border-color: var(--gold); box-shadow: var(--shadow); }
+  .doc-num { width: 32px; height: 32px; border-radius: 8px; background: var(--cream); color: var(--gold); font-weight: 800; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  .info-section { padding: 80px 0; background: var(--gray-100); }
+  .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .info-block { padding: 36px 28px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--gray-200); transition: var(--transition); }
+  .info-block:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: var(--shadow); }
+  .info-icon { width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, rgba(0,107,182,0.12), rgba(0,107,182,0.04)); display: flex; align-items: center; justify-content: center; color: var(--gold); margin-bottom: 18px; }
+  .info-block h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .info-block p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.8; }
+
+  .cta-section { position: relative; padding: 100px 0; text-align: center; overflow: hidden; }
+  .cta-bg { position: absolute; inset: 0; }
+  .cta-bg img { width: 100%; height: 100%; object-fit: cover; }
+  .cta-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,40,70,0.94), rgba(0,61,107,0.88)); }
+  .cta-section .container { position: relative; z-index: 1; }
+  .cta-section h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--white); margin-bottom: 12px; }
+  .cta-section p { color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+  .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  @media (max-width: 768px) {
+    .intro-grid { grid-template-columns: 1fr; }
+    .steps-grid, .docs-grid, .info-grid { grid-template-columns: 1fr; }
+  }
+</style>
